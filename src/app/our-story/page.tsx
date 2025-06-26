@@ -8,6 +8,7 @@ export default function OurStory() {
         <section className="w-full text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Our Story</h1>
           <p className="text-lg mb-8">Learn about our journey, values, and commitment to delivering quality flooring solutions.</p>
+          <img src="/gallery/gallery42.jpg" alt="Our Story" className="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy" />
         </section>
         {/* Our Journey Section */}
         <section className="w-full text-center mb-8">

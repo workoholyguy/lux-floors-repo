@@ -96,7 +96,7 @@ button:hover,
 footer {
   background: var(--charcoal);
   color: var(--champagne);
-  padding: 2rem 0 1rem 0;
+  padding: 1rem 0rem;
   text-align: center;
   font-size: 1rem;
   letter-spacing: 0.05em;
