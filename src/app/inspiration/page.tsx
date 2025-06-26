@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import EstimateForm from '../partials/EstimateForm';
+// import EstimateForm from '../partials/EstimateForm';
 import ContactUs from '../partials/ContactUs';
 
 export default function Inspiration() {
