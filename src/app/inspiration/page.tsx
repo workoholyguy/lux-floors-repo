@@ -115,7 +115,7 @@ export default function Inspiration() {
           <p className="px-8">Ready to bring your vision to life? Contact us to discuss your project or schedule a visit to our showroom for a personalized consultation.
           </p>
         </section>
-          <ContactUs className='px-8 mb-2'/>
+          <ContactUs />
       </main>
     </div>
   );
