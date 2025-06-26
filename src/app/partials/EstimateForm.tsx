@@ -16,6 +16,7 @@ type FormData = {
   products: string[];
   comments: string;
   keepUpdated: boolean;
+  pageUrl: string;
 };
 
 type Product = {
@@ -65,6 +66,7 @@ export default function EstimateForm() {
     products: [],
     comments: '',
     keepUpdated: false,
+    pageUrl: '',
   });
   const [status, setStatus] = useState('');
 
@@ -91,10 +93,14 @@ export default function EstimateForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Sending...');
+    const dataToSend = {
+      ...formData,
+      pageUrl: window.location.href,
+    };
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(dataToSend),
     });
     if (res.ok) {
       setStatus('Thank you! Your request has been sent.');
@@ -112,8 +118,11 @@ export default function EstimateForm() {
         products: [],
         comments: '',
         keepUpdated: false,
+        pageUrl: '',
       });
     } else {
+      const errorText = await res.text();
+      console.error('Error sending email:', errorText);
       setStatus('There was an error. Please try again.');
     }
   };
@@ -136,7 +145,7 @@ export default function EstimateForm() {
               type="text"
               id="firstName"
               name="firstName"
-              // required
+              required
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
               value={formData.firstName}
               onChange={handleChange}
@@ -144,7 +153,7 @@ export default function EstimateForm() {
           </div>
           <div>
             <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-              <span className="text-red-500">*</span> Last Name
+              <span className="text-red-500"></span> Last Name
             </label>
             <input
               type="text"
@@ -171,6 +180,7 @@ export default function EstimateForm() {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
             value={formData.email}
             onChange={handleChange}
+            placeholder='example@example.com'
           />
         </div>
 
@@ -187,6 +197,7 @@ export default function EstimateForm() {
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"
               value={formData.phone}
               onChange={handleChange}
+              placeholder='(xxx) xxx-xxxx'
             />
           </div>
           <div>
@@ -253,7 +264,7 @@ export default function EstimateForm() {
         </div>
 
         {/* Preferred Date and Time */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700">
               Preferred Date
@@ -284,7 +295,7 @@ export default function EstimateForm() {
               ))}
             </select>
           </div>
-        </div>
+        </div> */}
 
         {/* Products */}
         <div>

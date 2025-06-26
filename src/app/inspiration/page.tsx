@@ -66,7 +66,7 @@ export default function Inspiration() {
         {lightboxOpen && lightboxImg && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
-            style={{ animation: 'fadeIn 0.2s' }}
+            style={{ zIndex: 1000, animation: 'fadeIn 0.2s' }}
             onClick={closeLightbox}
           >
             <img
