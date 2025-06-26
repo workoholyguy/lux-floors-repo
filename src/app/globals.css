@@ -9,7 +9,8 @@
   --charcoal: #232323;
   --champagne: #f7e7ce;
   --ivory: #fffefa;
-  --gold-accent: #bfa76f;
+  --gold-accent: #e6d09f;
+  --gold-accent-hover: #fdebc1;
   --background: var(--ivory);
   --foreground: var(--charcoal);
   --primary: var(--charcoal);
@@ -100,6 +101,10 @@ footer {
   font-size: 1rem;
   letter-spacing: 0.05em;
   border-top: 2px solid var(--accent);
+}
+
+header a.nav-link {
+  font-weight: 900;
 }
 
 footer a {
@@ -196,4 +201,9 @@ footer a {
   background: linear-gradient(90deg, var(--accent) 60%, var(--champagne) 100%);
   border-radius: 2px;
   box-shadow: 0 2px 8px 0 rgba(191, 167, 111, 0.12);
+}
+
+input {
+  border: 1px solid var(--accent);
+  padding-left: 0.5rem;
 }
