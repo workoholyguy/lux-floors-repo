@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 * {
-  border: 1px solid red;
+  box-sizing: border-box;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --charcoal: #232323;
+  --champagne: #f7e7ce;
+  --ivory: #fffefa;
+  --gold-accent: #bfa76f;
+  --background: var(--ivory);
+  --foreground: var(--charcoal);
+  --primary: var(--charcoal);
+  --secondary: var(--champagne);
+  --accent: var(--gold-accent);
 }
 
 @theme inline {
@@ -26,5 +33,166 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+section,
+main,
+.card {
+  background: var(--ivory);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(35, 35, 35, 0.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+button,
+.btn {
+  background: var(--accent);
+  color: var(--charcoal);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--charcoal);
+  color: var(--champagne);
+}
+
+footer {
+  background: var(--charcoal);
+  color: var(--champagne);
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border-top: 2px solid var(--accent);
+}
+
+footer a {
+  color: var(--champagne);
+}
+
+/* Gallery placeholder styling */
+.bg-gray-200 {
+  background: linear-gradient(135deg, var(--champagne) 60%, var(--ivory) 100%);
+  border: 1.5px solid var(--accent);
+  color: var(--charcoal);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Remove Tailwind's default border if present */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r {
+  border-color: var(--accent) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  min-height: 400px;
+  background: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)),
+    url("/hero1.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--champagne);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 32px 0 rgba(35, 35, 35, 0.12);
+}
+
+/* Gallery Card */
+.gallery-card {
+  position: relative;
+  height: 10rem;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 16px 0 rgba(35, 35, 35, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.gallery-card:hover {
+  transform: scale(1.035) translateY(-4px);
+  box-shadow: 0 8px 32px 0 rgba(35, 35, 35, 0.18);
+}
+.gallery-label {
+  background: rgba(35, 35, 35, 0.65);
+  color: var(--champagne);
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-bottom: 0.2em;
+  transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
+}
+.nav-link-active {
+  color: var(--accent);
+}
+.nav-link-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 60%, var(--champagne) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px 0 rgba(191, 167, 111, 0.12);
 }

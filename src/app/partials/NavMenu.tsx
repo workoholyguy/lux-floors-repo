@@ -1,6 +1,16 @@
+"use client";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/products', label: 'Products' },
+    { href: '/services', label: 'Services' },
+    { href: '/inspiration', label: 'Inspiration' },
+    { href: '/our-story', label: 'Our Story' },
+  ];
   return (
     <header style={{
       width: '100%',
@@ -25,11 +35,20 @@ export default function Header() {
       {/* Navigation */}
       <nav>
         <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
-            <li><Link href="/">Home</Link></li>
-          <li><Link href="/products">Products</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/inspiration">Inspiration</Link></li>
-          <li><Link href="/our-story">Our Story</Link></li>
+          {navLinks.map(link => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={
+                  pathname === link.href
+                    ? 'nav-link nav-link-active'
+                    : 'nav-link'
+                }
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
       {/* Actions */}
@@ -37,7 +56,7 @@ export default function Header() {
         <a href="tel:7708008001" style={{
           background: '#222', color: '#fff', padding: '0.5rem 1rem', borderRadius: 6, textDecoration: 'none', fontWeight: 500
         }}>Call Us</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=1140+roswell+road+suite+140,+marietta,+georgia,+30062" target="_blank" rel="noopener noreferrer" style={{
+        <a href="https://www.google.com/maps/search/1874+Piedmont+Ave+Atlanta,+GA++Suite+390-C+/@33.8139439,-84.4114447,13z/data=!3m1!4b1!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/dir/?api=1&destination=1140+roswell+road+suite+140,+marietta,+georgia,+30062" target="_blank" rel="noopener noreferrer" style={{
           background: '#0070f3', color: '#fff', padding: '0.5rem 1rem', borderRadius: 6, textDecoration: 'none', fontWeight: 500
         }}>Find us on a map</a>
       </div>

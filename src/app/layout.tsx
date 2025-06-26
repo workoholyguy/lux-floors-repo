@@ -30,6 +30,9 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <footer className="flex gap-6 flex-wrap items-center justify-center p-6 border-t mt-8">
+        <span>&copy; {new Date().getFullYear()} LuxFloors. All rights reserved. Powered by <a href="https://mynameisomar.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-white-900 hover:text-blue-700 font-bold underline italic">Avid Tech USA</a></span>
+      </footer>
       </body>
     </html>
   );
