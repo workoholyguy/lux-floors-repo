@@ -6,16 +6,16 @@ export async function POST(request: Request) {
     const formData = await request.json();
     
     // Create a test account (in production, use real credentials)
-    const testAccount = await nodemailer.createTestAccount();
+    // const testAccount = await nodemailer.createTestAccount();
     
     // Create a transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      host: 'smtp.ionos.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
-        user: testAccount.user, // generated ethereal user
-        pass: testAccount.pass, // generated ethereal password
+        user: 'info@daltonfloorgallery.com', // generated ethereal user
+        pass: 'Atlanta@1140', // generated ethereal password
       },
     });
 
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
     // Send mail with defined transport object
     const info = await transporter.sendMail({
-      from: '"Website Form" <noreply@daltonfloorgallery.com>',
+      from: '"Dalton Floor Gallery" <info@daltonfloorgallery.com>',
       to: 'info@daltonfloorgallery.com',
       subject: `New Estimate Request from ${formData.firstName} ${formData.lastName}`,
       text: emailContent,
