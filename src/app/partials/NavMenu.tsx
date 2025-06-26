@@ -17,7 +17,7 @@ export default function Header() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '1rem 2rem',
+      padding: '0.5rem 2rem',
       borderBottom: '1px solid #eee',
       background: '#fff',
       boxSizing: 'border-box',
@@ -27,14 +27,14 @@ export default function Header() {
     }}>
       {/* Logo */}
       <Link href="/">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
         <img src="/file.svg" alt="Company Logo" style={{ height: 40 }} />
         <span style={{ fontWeight: 700, fontSize: 22, letterSpacing: 1 }}>LuxFloors</span>
       </div>
       </Link>
       {/* Navigation */}
       <nav>
-        <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
+        <ul style={{ display: 'flex', gap: '1.25rem', listStyle: 'none', margin: 0, padding: 0 }}>
           {navLinks.map(link => (
             <li key={link.href}>
               <Link
@@ -52,12 +52,12 @@ export default function Header() {
         </ul>
       </nav>
       {/* Actions */}
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <div style={{ display: 'flex', gap: '0.5rem' }}>
         <a href="tel:7708008001" style={{
-          background: '#222', color: '#fff', padding: '0.5rem 1rem', borderRadius: 6, textDecoration: 'none', fontWeight: 500
+          background: '#222', color: '#fff', padding: '0.5rem 0.5rem', borderRadius: 6, textDecoration: 'none', fontWeight: 900
         }}>Call Us</a>
         <a href="https://www.google.com/maps/search/1874+Piedmont+Ave+Atlanta,+GA++Suite+390-C+/@33.8139439,-84.4114447,13z/data=!3m1!4b1!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/dir/?api=1&destination=1140+roswell+road+suite+140,+marietta,+georgia,+30062" target="_blank" rel="noopener noreferrer" style={{
-          background: '#0070f3', color: '#fff', padding: '0.5rem 1rem', borderRadius: 6, textDecoration: 'none', fontWeight: 500
+          background: '#0070f3', color: '#fff', padding: '0.5rem 0.5rem', borderRadius: 6, textDecoration: 'none', fontWeight: 900
         }}>Find us on a map</a>
       </div>
     </header>

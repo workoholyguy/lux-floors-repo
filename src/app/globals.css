@@ -2,7 +2,7 @@
 
 * {
   /* box-sizing: border-box; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 :root {
@@ -69,7 +69,7 @@ main,
   background: var(--ivory);
   border-radius: 16px;
   box-shadow: 0 2px 16px 0 rgba(35, 35, 35, 0.06);
-  padding: 1.5rem;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 

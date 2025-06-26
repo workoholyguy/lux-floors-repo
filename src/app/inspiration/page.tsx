@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import EstimateForm from '../partials/EstimateForm';
+import ContactUs from '../partials/ContactUs';
 
 export default function Inspiration() {
   // Generate an array of image paths for gallery1.jpg to gallery30.jpg
@@ -111,10 +112,11 @@ export default function Inspiration() {
         </section>
         <section className="w-full py-12 bg-white">
           <h2 className="text-2xl font-semibold mb-2 px-8">Contact for Inspiration</h2>
-          <p className="px-8">Ready to bring your vision to life? Contact us to discuss your project or schedule a visit to our showroom for a personalized consultation.</p>
+          <p className="px-8">Ready to bring your vision to life? Contact us to discuss your project or schedule a visit to our showroom for a personalized consultation.
+          </p>
         </section>
+          <ContactUs className='px-8 mb-2'/>
       </main>
-      <EstimateForm />
     </div>
   );
 } 
