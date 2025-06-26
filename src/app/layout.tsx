@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./partials/NavMenu";
+import LenisProvider from "./partials/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
         <footer className="flex gap-6 flex-wrap items-center justify-center p-6 border-t">
         <span>&copy; {new Date().getFullYear()} LuxFloors. All rights reserved. Powered by <a href="https://mynameisomar.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-white-900 hover:text-blue-700 font-bold underline italic">Avid Tech USA</a></span>
       </footer>
