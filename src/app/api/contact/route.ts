@@ -39,6 +39,9 @@ export async function POST(request: Request) {
       Comments: ${formData.comments || 'No comments provided'}
       
       Keep me updated: ${formData.keepUpdated ? 'Yes' : 'No'}
+      
+      Submitted from: ${formData.pageUrl || 'Unknown'}
+
     `;
 
     // Send mail with defined transport object
