@@ -8,7 +8,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     if (window.location.pathname === '/') return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 2.2,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: false,

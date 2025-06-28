@@ -25,6 +25,7 @@ export default function Inspiration() {
           <h1 className="text-4xl font-bold mb-1">Inspiration Gallery</h1>
           <p className="text-lg mb-2">Get inspired by our gallery of beautiful flooring projects and creative design ideas.</p>
         </section>
+        <div className="allSection p-8">
         <section className="w-full">
           <h2 className="text-2xl font-semibold mb-1 px-8">Project Highlights</h2>
           <p className="px-8">Discover how LuxFloors has transformed spaces with premium materials, expert craftsmanship, and timeless design. Each project in our gallery is a testament to our commitment to quality and innovation.</p>
@@ -116,6 +117,7 @@ export default function Inspiration() {
           </p>
         </section>
           <ContactUs/>
+        </div>
       </main>
     </div>
   );

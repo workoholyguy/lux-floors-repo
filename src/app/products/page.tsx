@@ -3,7 +3,7 @@ import React from 'react';
 export default function Products() {
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-1 flex flex-col gap-16 items-center w-full max-w-5xl mx-auto p-8">
+      <main className="flex-1 flex flex-col gap-16 items-center w-full mx-auto">
         <section className="w-full text-center">
           <h1 className="text-4xl font-bold mb-4">Our Products</h1>
           <p className="text-lg mb-8">Explore our wide range of premium flooring products, designed to suit every style and budget.</p>
