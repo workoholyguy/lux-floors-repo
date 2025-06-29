@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./partials/NavMenu";
 import LenisProvider from "./partials/LenisProvider";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,6 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo/noBgcirclefeather.png" sizes="any" />
+        {/* <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -33,7 +39,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
         </LenisProvider>
-        <footer className="flex gap-6 flex-wrap items-center justify-center p-6 border-t">
+        <footer className="flex z-15 gap-6 flex-wrap items-center justify-center p-6 border-t">
         <span>&copy; {new Date().getFullYear()} LuxFloors. All rights reserved. Powered by <a href="https://mynameisomar.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-white-900 hover:text-blue-700 font-bold underline italic">Avid Tech USA</a></span>
       </footer>
       </body>

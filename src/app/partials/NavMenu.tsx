@@ -49,7 +49,7 @@ export default function Header() {
       {/* Logo */}
       <Link href="/">
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-        <img src="/file.svg" alt="Company Logo" style={{ height: 40 }} />
+        <img src="/logo/noBgcirclefeather.png" alt="Company Logo" style={{ height: 40 }} />
         <span style={{ fontWeight: 700, fontSize: 22, letterSpacing: 1 }}>LuxFloors</span>
       </div>
       </Link>
