@@ -1,10 +1,12 @@
 import React from "react";
 import ContactUs from "../partials/ContactUs";
+import ValuesCarousel from "../partials/ValuesCarousel";
 
 export default function OurStory() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <main className="flex-1 flex flex-col gap-0 items-center w-full mx-auto p-0">
+      <div className="allSection p-8 justify-center">
         <section className="w-full text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Our Story</h1>
           <p className="text-lg mb-8">
@@ -19,7 +21,6 @@ export default function OurStory() {
           />
         </section>
         {/* Our Journey Section */}
-        <div className="allSection p-8">
           <section className="w-full text-center mb-8">
             <h2 className="text-3xl font-bold mb-6">Our Journey</h2>
           </section>
@@ -133,8 +134,8 @@ export default function OurStory() {
           </section>
           {/* Journey Closing Paragraph */}
           <section className="w-full flex flex-col items-center mb-12">
-            <div className="max-w-3xl">
-              <p className="text-base text-gray-700 text-center">
+            <div className="max-w-auto border-2 rounded-lg p-4 bg-black">
+              <p className="text-base text-[var(--gold-accent)] text-center font-extrabold">
                 Through every hardwood plank, stair runner, and vinyl sheet, Lux
                 Design Center lives by three principles: precision in every cut,
                 transparency in every estimate, and a promise that Emad, Kent,
@@ -145,56 +146,17 @@ export default function OurStory() {
             </div>
           </section>
 
-          <section className="w-full bg-gray-50 rounded-lg p-6 mt-8">
+          <section className="w-full bg-gray-50 rounded-lg p-4 mt-8">
             <h2 className="text-2xl font-semibold mb-2">Our Values</h2>
-            <ol className="list-decimal pl-6 space-y-2 text-gray-800">
-              <li>
-                <span className="font-bold">Craftsmanship:</span> Every
-                installation is an opportunity to showcase precision, skill and
-                attention to detail.
-              </li>
-              <li>
-                <span className="font-bold">Integrity:</span> We give
-                transparent estimates, honest advice and stand by our work from
-                start to finish.
-              </li>
-              <li>
-                <span className="font-bold">Customer Focus:</span> Your vision
-                guides our process—designs, materials and timelines are all
-                built around your needs.
-              </li>
-              <li>
-                <span className="font-bold">Innovation:</span> We stay ahead of
-                trends and master new techniques—whether it&apos;s exotic
-                hardwoods or cutting-edge vinyl systems.
-              </li>
-              <li>
-                <span className="font-bold">Resilience:</span>{" "}
-                Challenges—flooded showrooms, tricky substrates or tight
-                curves—only sharpen our problem-solving drive.
-              </li>
-              <li>
-                <span className="font-bold">Collaboration:</span> Installers,
-                designers and clients work as one team. Open communication fuels
-                every successful project.
-              </li>
-              <li>
-                <span className="font-bold">Reliability:</span> We show up on
-                time, respect your home and deliver lasting quality that stands
-                up to daily life.
-              </li>
-              <li>
-                <span className="font-bold">Sustainability:</span> We choose
-                materials and methods that balance beauty, durability and
-                environmental care.
-              </li>
-            </ol>
+            {/* Carousel Start */}
+            <ValuesCarousel />
+            {/* Carousel End */}
           </section>
           <section className="w-full bg-gray-50 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
-            <ContactUs />
           </section>
         </div>
+            <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
+            <ContactUs />
       </main>
     </div>
   );
