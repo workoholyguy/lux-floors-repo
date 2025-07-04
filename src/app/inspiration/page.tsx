@@ -5,7 +5,7 @@ import ContactUs from '../partials/ContactUs';
 
 export default function Inspiration() {
   // Generate an array of image paths for gallery1.jpg to gallery30.jpg
-  const galleryImages = Array.from({ length: 30 }, (_, i) => `/gallery/gallery${i + 1}.jpg`);
+  const galleryImages = Array.from({ length: 50 }, (_, i) => `/gallery/gallery${i + 1}.jpg`);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 

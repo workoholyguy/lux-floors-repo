@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import { useInView } from "./hooks/useInView";
 
 export default function Home() {
@@ -88,7 +89,9 @@ export default function Home() {
             >
               DESIGN CONSULTATION
             </h1>
+            
           </div>
+          
         </section>
 
         {/* Luxurious Hardwood Floors & Installation */}
