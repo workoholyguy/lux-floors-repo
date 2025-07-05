@@ -88,7 +88,7 @@ export default function ServiceDetail({ params }: Props) {
         )}
         {/* CTA */}
         <div className="mb-16 mt-16">
-          <Link href="/services#contact" className="btn text-lg font-bold">Request a Free Estimate</Link>
+          <Link href="/services#contact" className="btn text-lg font-bold">Request Free Estimate</Link>
         </div>
       </div>
     </>
