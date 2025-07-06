@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import { useInView } from "./hooks/useInView";
 
 export default function Home() {
@@ -62,20 +63,20 @@ export default function Home() {
         >
           <img src="/gallery/gallery46.jpg" alt="Design Consultation" className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none opacity-100" loading="lazy" />
           <div
-            className="relative z-10"
+            className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto bg-black/40 backdrop-blur rounded-2xl p-6 gap-8 w-[90%] md:w-[80%]"
             style={{
               position: "absolute",
               left: 0,
               bottom: 0,
-              width: "70%",
-              padding: "0 0 12vw 2vw",
+              right: 0,
+              margin: '0 auto',
               textAlign: "left",
             }}
           >
             <h1
               className="text-white/90 drop-shadow-2xl font-bold"
               style={{
-                fontSize: "clamp(2rem, 8vw, 10rem)",
+                fontSize: "clamp(2rem, 8vw, 5rem)",
                 lineHeight: 1.1,
                 letterSpacing: "-0.06em",
                 textShadow: "0 8px 32px rgba(35,35,35,0.5)",
@@ -88,6 +89,9 @@ export default function Home() {
             >
               DESIGN CONSULTATION
             </h1>
+            <Link href="/services/design-consultation" className="mt-4 md:mt-0">
+              <span className="bg-gradient-to-r from-[#bfa76a] to-[#e6d8a7] border border-white/60 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:shadow-[0_0_16px_2px_rgba(191,167,106,0.5)] transition text-base md:text-lg">Learn More</span>
+            </Link>
           </div>
         </section>
 

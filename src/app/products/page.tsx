@@ -1,42 +1,83 @@
 import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+
+// Example product data (replace with real data as needed)
+const products = [
+  {
+    name: 'European Oak Hardwood',
+    image: '/gallery/gallery43.jpg',
+    description: 'Premium wide-plank European oak for timeless elegance and durability.',
+  },
+  {
+    name: 'Luxury Vinyl Plank (LVP)',
+    image: '/gallery/gallery64.jpg',
+    description: 'Waterproof, scratch-resistant LVP in a variety of wood and stone looks.',
+  },
+  {
+    name: 'Designer Carpet',
+    image: '/gallery/gallery83.jpg',
+    description: 'Plush, high-end carpets in custom colors, patterns, and textures.',
+  },
+  {
+    name: 'Custom Stair Runner',
+    image: '/gallery/gallery45.jpg',
+    description: 'Bespoke stair runners for safety and style, tailored to your home.',
+  },
+];
 
 export default function Products() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1 flex flex-col gap-16 items-center w-full mx-auto">
-        <section className="w-full text-center">
+    <>
+      <Head>
+        <title>Our Products | LuxFloors</title>
+        <meta name="description" content="Explore our curated selection of premium flooring products: hardwood, luxury vinyl, carpet, stair runners, and more. Only the best from LuxFloors." />
+        <meta property="og:title" content="Our Products | LuxFloors" />
+        <meta property="og:description" content="Explore our curated selection of premium flooring products: hardwood, luxury vinyl, carpet, stair runners, and more. Only the best from LuxFloors." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.luxfloors.com/products" />
+        <meta property="og:image" content="/gallery/gallery43.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Products | LuxFloors" />
+        <meta name="twitter:description" content="Explore our curated selection of premium flooring products: hardwood, luxury vinyl, carpet, stair runners, and more. Only the best from LuxFloors." />
+        <meta name="twitter:image" content="/gallery/gallery43.jpg" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Our Products",
+            "description": "Curated selection of premium flooring products from LuxFloors.",
+            "mainEntity": [
+              ${products.map((p) => `{
+                "@type": "Product",
+                "name": "${p.name}",
+                "image": "https://www.luxfloors.com${p.image}",
+                "description": "${p.description}"
+              }`).join(',')}
+            ]
+          }
+        `}</script>
+      </Head>
+      <div className="flex flex-col min-h-screen items-center w-full">
+        <section className="w-full max-w-4xl mx-auto py-12 px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Our Products</h1>
-          <p className="text-lg mb-8">Explore our wide range of premium flooring products, designed to suit every style and budget.</p>
-        </section>
-        <section className="w-full">
-          <h2 className="text-2xl font-semibold mb-2">Featured Products</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.</p>
-        </section>
-        <section className="w-full bg-gray-50 rounded-lg p-6">
-          <h2 className="text-2xl font-semibold mb-2">Product Gallery</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 1</div>
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 2</div>
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 3</div>
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 4</div>
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 5</div>
-            <div className="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-gray-500">Product 6</div>
+          <p className="text-lg mb-8">Explore our curated selection of premium flooring products. <Link href="/services" className="text-gold-accent underline">See our services</Link> or <Link href="/services#contact" className="text-gold-accent underline">request a free estimate</Link>.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <div key={product.name} className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center border border-gray-100 hover:border-gray-300 transition-all">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="rounded-xl w-full max-w-xs h-44 object-cover object-bottom mb-4 border border-gray-200"
+                  loading="lazy"
+                />
+                <h2 className="text-xl font-bold mb-2 text-gray-900 tracking-tight font-serif">{product.name}</h2>
+                <p className="text-gray-700 text-center text-base font-light leading-relaxed mb-2">{product.description}</p>
+              </div>
+            ))}
           </div>
         </section>
-        <section className="w-full">
-          <h2 className="text-2xl font-semibold mb-2">Why Choose Our Products?</h2>
-          <ul className="list-disc pl-6">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</li>
-            <li>Donec ullamcorper nulla non metus auctor fringilla.</li>
-            <li>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</li>
-          </ul>
-        </section>
-        <section className="w-full bg-gray-50 rounded-lg p-6">
-          <h2 className="text-2xl font-semibold mb-2">Contact for Products</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
-        </section>
-      </main>
     </div>
+    </>
   );
 } 

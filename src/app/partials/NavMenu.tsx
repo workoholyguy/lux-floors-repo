@@ -174,6 +174,29 @@ export default function Header() {
             >
               Get Directions
             </a>
+            <a
+              href="/services#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '0.25rem 0.5rem',
+                color: '#222',
+                textDecoration: 'none',
+                fontWeight: 700,
+                borderRadius: 12,
+                border: '1px solid var(--charcoal)',
+                textAlign: 'left',
+                cursor: 'pointer',
+                transition: 'background 0.2s, border-color 0.2s',
+                background: 'none',
+                display: 'block',
+              }}
+              onMouseOver={e => (e.currentTarget.style.background = 'var(--gold-accent-hover)')}
+              onMouseOut={e => (e.currentTarget.style.background = 'none')}
+              onClick={() => setDropdownOpen(false)}
+            >
+              Callback
+            </a>
           </div>
         )}
       </div>
