@@ -8,9 +8,8 @@ interface Props {
   params: { slug: string };
 }
 
-export default async function ServiceDetail({ params }: Props) {
-  const awaitedParams = await params;
-  const service = services.find(s => s.slug === awaitedParams.slug);
+export default function ServiceDetail({ params }: Props) {
+  const service = services.find(s => s.slug === params.slug);
   if (!service) return notFound();
 
   const pageTitle = `${service.title} | LuxFloors`;
