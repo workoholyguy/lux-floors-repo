@@ -3,13 +3,15 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>
 }
 
-export default function ServiceDetail({ params }: Props) {
-  const service = services.find(s => s.slug === params.slug);
+export default async function ServiceDetail({ params }: Props) {
+  const { slug } = await params;
+  const service = services.find(s => s.slug === slug);
   if (!service) return notFound();
 
   const pageTitle = `${service.title} | LuxFloors`;
@@ -93,4 +95,33 @@ export default function ServiceDetail({ params }: Props) {
       </div>
     </>
   );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find(s => s.slug === slug);
+  if (!service) return notFound();
+
+  const pageTitle = `${service.title} | LuxFloors`;
+  const pageDesc = service.description.replace(/\n|•/g, ' ').slice(0, 160) + '...';
+  const pageUrl = `https://www.luxfloors.com/services/${service.slug}`;
+  const pageImg = service.image;
+
+  return {
+    title: pageTitle,
+    description: pageDesc,
+    openGraph: {
+      title: pageTitle,
+      description: pageDesc,
+      type: 'article',
+      url: pageUrl,
+      images: [pageImg],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: pageDesc,
+      images: [pageImg],
+    },
+  };
 } 
