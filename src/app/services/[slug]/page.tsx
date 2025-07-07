@@ -4,6 +4,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -57,10 +58,13 @@ export default async function ServiceDetail({ params }: Props) {
         </div>
         {/* Hero Section */}
         <div className="w-full h-72 md:h-96 relative mb-8 rounded-2xl overflow-hidden shadow-xl max-w-4xl mx-auto mt-4">
-          <img
+          <Image
             src={service.image}
             alt={`${service.title} example project`}
             className="w-full h-full object-cover object-center"
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <h1 className="text-4xl md:text-5xl font-bold text-[var(--gold-accent)] drop-shadow-lg text-center font-serif">{service.title}</h1>
@@ -77,12 +81,15 @@ export default async function ServiceDetail({ params }: Props) {
             <h3 className="text-xl font-bold mb-4 text-center text-gold-accent font-serif">Gallery</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {service.gallery.map((img, idx) => (
-                <img
+                <Image
                   key={idx}
                   src={img}
                   alt={`${service.title} gallery image ${idx + 1}`}
                   className="rounded-xl shadow-md w-full h-64 object-cover object-center"
                   loading="lazy"
+                  width={800}
+                  height={400}
+                  style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '256px' }}
                 />
               ))}
             </div>

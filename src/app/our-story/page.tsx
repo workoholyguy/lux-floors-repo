@@ -1,5 +1,7 @@
 import React from "react";
 import ContactUs from "../partials/ContactUs";
+import Image from 'next/image';
+import ValuesCarousel from "../partials/ValuesCarousel";
 
 export default function OurStory() {
   return (
@@ -11,11 +13,14 @@ export default function OurStory() {
             Learn about our journey, values, and commitment to delivering
             quality flooring solutions.
           </p>
-          <img
+          <Image
             src="/gallery/gallery42.jpg"
             alt="Our Story"
             className="rounded-lg shadow-lg w-full h-64 object-cover"
             loading="lazy"
+            width={800}
+            height={256}
+            style={{ objectFit: 'cover', width: '100%', height: '256px' }}
           />
         </section>
         {/* Our Journey Section */}
@@ -26,11 +31,14 @@ export default function OurStory() {
           {/* Journey Paragraph 1 */}
           <section className="w-full flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="md:w-1/2 w-full flex-shrink-0">
-              <img
+              <Image
                 src="/gallery/gallery38.jpg"
                 alt="Founders and team"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
+                width={800}
+                height={256}
+                style={{ objectFit: 'cover', width: '100%', height: '256px' }}
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -48,11 +56,14 @@ export default function OurStory() {
           {/* Journey Paragraph 2 */}
           <section className="w-full flex flex-col md:flex-row items-center gap-8 mb-8 md:flex-row-reverse">
             <div className="md:w-1/2 w-full flex-shrink-0">
-              <img
+              <Image
                 src="/gallery/gallery37.jpg"
                 alt="Showroom flood recovery"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
+                width={800}
+                height={256}
+                style={{ objectFit: 'cover', width: '100%', height: '256px' }}
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -69,11 +80,14 @@ export default function OurStory() {
           {/* Journey Paragraph 3 */}
           <section className="w-full flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="md:w-1/2 w-full flex-shrink-0">
-              <img
+              <Image
                 src="/gallery/gallery39.jpg"
                 alt="Exotic hardwoods and design awards"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
+                width={800}
+                height={256}
+                style={{ objectFit: 'cover', width: '100%', height: '256px' }}
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -92,11 +106,14 @@ export default function OurStory() {
           {/* Journey Paragraph 4 */}
           <section className="w-full flex flex-col md:flex-row items-center gap-8 mb-8 md:flex-row-reverse">
             <div className="md:w-1/2 w-full flex-shrink-0">
-              <img
+              <Image
                 src="/gallery/gallery40.jpg"
                 alt="Beaumont residence staircase"
                 className="rounded-lg shadow-lg w-full h-64 object-cover object-bottom"
                 loading="lazy"
+                width={800}
+                height={256}
+                style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '256px' }}
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -113,11 +130,14 @@ export default function OurStory() {
           {/* Journey Paragraph 5 */}
           <section className="w-full flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="md:w-1/2 w-full flex-shrink-0">
-              <img
+              <Image
                 src="/gallery/gallery41.jpg"
                 alt="Corbin project basement transformation"
                 className="rounded-lg shadow-lg w-full h-64 object-cover object-bottom"
                 loading="lazy"
+                width={800}
+                height={256}
+                style={{ objectFit: 'cover', objectPosition: 'bottom', width: '100%', height: '256px' }}
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -147,48 +167,9 @@ export default function OurStory() {
 
           <section className="w-full bg-gray-50 rounded-lg p-6 mt-8">
             <h2 className="text-2xl font-semibold mb-2">Our Values</h2>
-            <ol className="list-decimal pl-6 space-y-2 text-gray-800">
-              <li>
-                <span className="font-bold">Craftsmanship:</span> Every
-                installation is an opportunity to showcase precision, skill and
-                attention to detail.
-              </li>
-              <li>
-                <span className="font-bold">Integrity:</span> We give
-                transparent estimates, honest advice and stand by our work from
-                start to finish.
-              </li>
-              <li>
-                <span className="font-bold">Customer Focus:</span> Your vision
-                guides our process—designs, materials and timelines are all
-                built around your needs.
-              </li>
-              <li>
-                <span className="font-bold">Innovation:</span> We stay ahead of
-                trends and master new techniques—whether it&apos;s exotic
-                hardwoods or cutting-edge vinyl systems.
-              </li>
-              <li>
-                <span className="font-bold">Resilience:</span>{" "}
-                Challenges—flooded showrooms, tricky substrates or tight
-                curves—only sharpen our problem-solving drive.
-              </li>
-              <li>
-                <span className="font-bold">Collaboration:</span> Installers,
-                designers and clients work as one team. Open communication fuels
-                every successful project.
-              </li>
-              <li>
-                <span className="font-bold">Reliability:</span> We show up on
-                time, respect your home and deliver lasting quality that stands
-                up to daily life.
-              </li>
-              <li>
-                <span className="font-bold">Sustainability:</span> We choose
-                materials and methods that balance beauty, durability and
-                environmental care.
-              </li>
-            </ol>
+            {/* Carousel Start */}
+            <ValuesCarousel />
+            {/* Carousel End */}
           </section>
           <section className="w-full bg-gray-50 rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Example product data (replace with real data as needed)
 const products = [
@@ -64,12 +65,14 @@ export default function Products() {
           <p className="text-lg mb-8">Explore our curated selection of premium flooring products. <Link href="/services" className="text-gold-accent underline">See our services</Link> or <Link href="/services#contact" className="text-gold-accent underline">request a free estimate</Link>.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.name} className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center border border-gray-100 hover:border-gray-300 transition-all">
-                <img
+              <div key={product.name} className="relative bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center border border-gray-100 hover:border-gray-300 transition-all">
+                <Image
                   src={product.image}
                   alt={product.name}
                   className="rounded-xl w-full max-w-xs h-44 object-cover object-bottom mb-4 border border-gray-200"
                   loading="lazy"
+                  fill
+                  sizes="(max-width: 600px) 100vw, 400px"
                 />
                 <h2 className="text-xl font-bold mb-2 text-gray-900 tracking-tight font-serif">{product.name}</h2>
                 <p className="text-gray-700 text-center text-base font-light leading-relaxed mb-2">{product.description}</p>

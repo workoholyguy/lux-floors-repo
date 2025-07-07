@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Image from 'next/image';
 // import EstimateForm from '../partials/EstimateForm';
 import ContactUs from '../partials/ContactUs';
 
@@ -71,15 +72,20 @@ export default function Inspiration() {
             style={{ zIndex: 1000, animation: 'fadeIn 0.2s' }}
             onClick={closeLightbox}
           >
-            <img
+            <Image
               src={lightboxImg}
               alt="Gallery Full Size"
+              width={1200}
+              height={800}
               style={{
                 maxWidth: '90vw',
                 maxHeight: '90vh',
                 borderRadius: '18px',
                 boxShadow: '0 8px 32px 0 rgba(35,35,35,0.32)',
                 border: '4px solid var(--champagne)',
+                objectFit: 'contain',
+                width: 'auto',
+                height: 'auto',
               }}
               onClick={e => e.stopPropagation()}
             />

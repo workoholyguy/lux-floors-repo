@@ -1,6 +1,7 @@
 'use client';
 import Link from "next/link";
 import { useInView } from "./hooks/useInView";
+import Image from 'next/image';
 
 export default function Home() {
   // Create refs for each section
@@ -19,12 +20,14 @@ export default function Home() {
           ref={heroRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img
+          <Image
             src="/gallery/gallery48.jpg"
             alt="Wide-plank European oak in a sunlit living room"
             className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none"
             loading="eager"
-            style={{ zIndex: 0 }}
+            fill
+            sizes="100vw"
+            style={{ zIndex: 0, objectFit: 'cover', objectPosition: 'bottom' }}
           />
           <div
             className={`hero-reveal${heroRef.current?.classList.contains('in-view') ? ' in-view' : ''} relative z-10`}
@@ -61,7 +64,7 @@ export default function Home() {
           ref={consultRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img src="/gallery/gallery46.jpg" alt="Design Consultation" className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none opacity-100" loading="lazy" />
+          <Image src="/gallery/gallery46.jpg" alt="Design Consultation" className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none opacity-100" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
           <div
             className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto bg-black/40 backdrop-blur rounded-2xl p-6 gap-8 w-[90%] md:w-[80%]"
             style={{
@@ -100,7 +103,7 @@ export default function Home() {
           ref={hardwoodRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img src="/gallery/gallery51.jpg" alt="Hardwood Floors" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" />
+          <Image src="/gallery/gallery51.jpg" alt="Hardwood Floors" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'bottom' }} />
           <div
             className="relative z-10"
             style={{
@@ -136,7 +139,7 @@ export default function Home() {
           ref={carpetRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img src="/gallery/gallery80.jpg" alt="Carpet Selection" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" />
+          <Image src="/gallery/gallery80.jpg" alt="Carpet Selection" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'bottom' }} />
           <div
             className="relative z-10"
             style={{
@@ -172,7 +175,7 @@ export default function Home() {
           ref={stairRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img src="/gallery/gallery78.jpg" alt="Custom Stair Runner" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" />
+          <Image src="/gallery/gallery78.jpg" alt="Custom Stair Runner" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'bottom' }} />
           <div
             className="relative z-10"
             style={{
@@ -208,7 +211,7 @@ export default function Home() {
           ref={sandingRef}
           className="h-screen w-full flex items-center justify-center relative snap-start overflow-hidden"
         >
-          <img src="/gallery/gallery82.jpg" alt="Sanding and Finishing" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" />
+          <Image src="/gallery/gallery82.jpg" alt="Sanding and Finishing" className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none select-none opacity-100" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'bottom' }} />
           <div
             className="relative z-10"
             style={{

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
@@ -49,7 +50,7 @@ export default function Header() {
       {/* Logo */}
       <Link href="/">
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-        <img src="/logo/noBgcirclefeather.png" alt="Company Logo" style={{ height: 40 }} />
+        <Image src="/logo/noBgcirclefeather.png" alt="Company Logo" width={40} height={40} style={{ height: 40, width: 40 }} />
         <span style={{ fontWeight: 700, fontSize: 22, letterSpacing: 1 }}>LuxFloors</span>
       </div>
       </Link>

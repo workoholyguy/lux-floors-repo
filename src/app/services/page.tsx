@@ -5,6 +5,7 @@ import ServiceCard from '../partials/ServiceCard';
 import FeatureCard from '../partials/FeatureCard';
 import Link from 'next/link';
 import { services } from './serviceData';
+import Image from 'next/image';
 
 export default function Services() {
   return (
@@ -53,7 +54,7 @@ export default function Services() {
         <section className="w-full text-center">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
           <p className="text-lg mb-8">Discover our professional installation, maintenance, and consultation services for all your flooring needs.</p>
-            <img src="/gallery/gallery48.jpg" alt="LuxFloors showroom and flooring installation team" className="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy" />
+            <Image src="/gallery/gallery48.jpg" alt="LuxFloors showroom and flooring installation team" className="rounded-lg shadow-lg w-full h-64 object-cover" loading="lazy" fill sizes="100vw" style={{ objectFit: 'cover' }} />
           </section>
           {/* How We Work Section */}
           <section className="w-full py-10 bg-gray-100 rounded-lg my-8">
